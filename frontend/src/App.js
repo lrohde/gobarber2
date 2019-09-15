@@ -1,11 +1,18 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-// import { Container } from './styles';
+import GlobalStyle from './styles/global';
+import './config/ReactotronConfig';
 
-export default function src() {
+import history from './services/history';
+
+import Routes from './routes';
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Helo world</h1>
-    </div>
+    <Router history={history}>
+      <Routes />
+      <GlobalStyle />
+    </Router>
   );
 }
